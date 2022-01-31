@@ -32,28 +32,8 @@ export default function Navbar(props) {
                   Home
                 </a>
               </li>
-              {/* <li className="nav-item">
-                <a className="nav-link mx-3 fs-5" href="/">
-                  About Us
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link mx-3 fs-5" href="/">
-                  Contact Us
-                </a>
-              </li> */}
             </ul>
-            {/* <form className='d-flex mx-3'>
-              <input
-                className='form-control me-2'
-                type='search'
-                placeholder='Search'
-                aria-label='Search'
-              />
-              <button className='btn btn-outline-warning' type='submit'>
-                Search
-              </button>
-            </form> */}
+            
             <div
               className={`form-check form-switch text-${
                 props.mode === "light" ? "dark" : "light"
