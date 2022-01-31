@@ -62,7 +62,7 @@ export default function InputForm(props) {
   };
 
   // Word counting logic!
-  let wordLength = text.split(" ").filter((element) => {
+  let wordLength = text.split(/\s+/).filter((element) => {
     return element.length !== 0;
   }).length;
 
@@ -81,7 +81,7 @@ export default function InputForm(props) {
           htmlFor="myBox font-weight-bold"
           className="myBox text-changer mb-3"
         >
-          <h3>{props.title}📝</h3>
+          <h3>{props.title}</h3>
         </label>
         <textarea
           className="form-control"
@@ -96,6 +96,7 @@ export default function InputForm(props) {
           type="submit"
           onClick={clearText}
           className="btn btn-sm mx-3 mb-2 mt-4 fs-5 text-changer btn-danger"
+          disabled={text.length === 0}
         >
           Clear Text
         </button>
@@ -109,6 +110,7 @@ export default function InputForm(props) {
           className={`btn btn-sm mx-3 my-2 fs-5 text-${
             props.mode === "light" ? "dark" : "light"
           } text-primary btn-outline-info`}
+          disabled={text.length === 0}
         >
           Convert to UPPERCASE
         </button>
@@ -119,6 +121,7 @@ export default function InputForm(props) {
           className={`btn btn-sm mx-3 my-2 fs-5 text-${
             props.mode === "light" ? "dark" : "light"
           } text-primary btn-outline-info`}
+          disabled={text.length === 0}
         >
           Convert to lowercase
         </button>
@@ -129,6 +132,7 @@ export default function InputForm(props) {
           className={`btn btn-sm mx-3 my-2 fs-5 text-${
             props.mode === "light" ? "dark" : "light"
           } text-primary btn-outline-info`}
+          disabled={text.length === 0}
         >
           Remove Extra Spaces
         </button>
@@ -139,6 +143,7 @@ export default function InputForm(props) {
           className={`btn btn-sm mx-3 my-2 fs-5 text-${
             props.mode === "light" ? "dark" : "light"
           } text-primary btn-outline-info`}
+          disabled={text.length === 0}
         >
           Inverse Text
         </button>
@@ -149,6 +154,7 @@ export default function InputForm(props) {
           className={`btn btn-sm mx-3 my-2 fs-5 text-${
             props.mode === "light" ? "dark" : "light"
           } text-primary btn-outline-info`}
+          disabled={text.length === 0}
         >
           Capitalize Text
         </button>
@@ -159,6 +165,7 @@ export default function InputForm(props) {
           className={`btn btn-sm mx-3 my-2 fs-5 text-${
             props.mode === "light" ? "dark" : "light"
           } text-primary btn-outline-info`}
+          disabled={text.length === 0}
         >
           Copy Text
         </button>
@@ -180,7 +187,7 @@ export default function InputForm(props) {
         <p className="text-white border bg-secondary">
           {text.length > 0
             ? text
-            : "Enter text in the text-box to see preview!"}
+            : "Nothing to Preview"}
         </p>
       </div>
     </>
