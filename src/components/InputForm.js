@@ -62,8 +62,9 @@ export default function InputForm(props) {
   };
 
   // Word counting logic!
-  let wordLength = text.split(" ").length;
-  if (text === "") wordLength = 0;
+  let wordLength = text.split(" ").filter((element) => {
+    return element.length !== 0;
+  }).length;
 
   // Length counting logic!
   const re = /[.!?]/;
