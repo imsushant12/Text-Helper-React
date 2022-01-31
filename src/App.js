@@ -36,7 +36,7 @@ function App() {
       <Alert alert={alert} />
       <div className="container">
         <InputForm
-          title="Enter the text to analyse"
+          title="Try Text Helper📝- Word Counter, Transform Text, Remove Extra Spaces, and more!"
           mode={mode}
           toggleMode={toggleMode}
           showAlert={showAlert}
